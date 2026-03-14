@@ -410,6 +410,44 @@ hr {
   color: var(--text-muted);
 }
 
+.feed-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.feed-list li + li {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(143, 211, 180, 0.1);
+}
+
+.feed-link {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  color: #eff7f2;
+  text-decoration: none;
+}
+
+.feed-link:hover,
+.feed-link:focus {
+  color: var(--mint-strong);
+}
+
+.feed-meta {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--mint-strong);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feed-list p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
 .page-header,
 .post-header {
   margin-bottom: 2rem;

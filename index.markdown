@@ -26,28 +26,46 @@ layout: home
 
 <section class="section-header">
   <div>
-    <h2>Start here</h2>
-    <p>Three clear entry points: who you are, what you build, and what you write.</p>
+    <h2>Recent Activity</h2>
+    <p>The latest projects and posts from across the site.</p>
   </div>
 </section>
 
 <section class="home-grid">
   <article class="panel">
-    <h2><a href="/about/">About</a></h2>
-    <p>
-      Use this section for your background, current work, interests, and a short personal introduction.
-    </p>
+    <h2><a href="/projects/">Latest Projects</a></h2>
+    {% if site.projects.size > 0 %}
+    <ul class="feed-list">
+      {% assign latest_projects = site.projects | sort: "order" %}
+      {% for project in latest_projects limit: 3 %}
+      <li>
+        <a class="feed-link" href="{{ project.url | relative_url }}">{{ project.title | escape }}</a>
+        {% if project.summary or project.excerpt %}
+        <p>{{ project.summary | default: project.excerpt | strip_html | truncate: 110 }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No projects published yet. Add entries to start building your project archive.</p>
+    {% endif %}
   </article>
   <article class="panel">
-    <h2><a href="/projects/">Projects</a></h2>
-    <p>
-      Showcase bigger efforts, ongoing builds, and portfolio work with room for status, stack, and links.
-    </p>
-  </article>
-  <article class="panel">
-    <h2><a href="/posts/">Posts</a></h2>
-    <p>
-      Keep smaller reflections, progress notes, updates, and essays organized in one clean archive.
-    </p>
+    <h2><a href="/posts/">Latest Posts</a></h2>
+    {% if site.posts.size > 0 %}
+    <ul class="feed-list">
+      {% for post in site.posts limit: 3 %}
+      <li>
+        <span class="feed-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="feed-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {% if post.excerpt %}
+        <p>{{ post.excerpt | strip_html | truncate: 110 }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No posts published yet.</p>
+    {% endif %}
   </article>
 </section>
