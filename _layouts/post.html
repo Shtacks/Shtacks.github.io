@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article class="surface post-shell" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header">
+    <span class="eyebrow">Post</span>
+    <h1 class="post-title" itemprop="headline">{{ page.title | escape }}</h1>
+    <div class="post-meta-row">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {% if page.author or site.author_name %}
+      <span>{{ page.author | default: site.author_name }}</span>
+      {% endif %}
+      {% if page.categories and page.categories != empty %}
+      <span class="post-kicker">{{ page.categories | join: " / " }}</span>
+      {% endif %}
+    </div>
+    {% if page.excerpt %}
+    <p class="post-summary">{{ page.excerpt | strip_html | normalize_whitespace }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="post-nav">
+    <a class="button-link" href="{{ "/posts/" | relative_url }}">Back to posts</a>
+  </div>
+</article>
