@@ -169,11 +169,22 @@ hr {
 }
 
 .site-title-mark {
-  width: 0.8rem;
-  height: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--mint-strong), var(--mint));
+  overflow: hidden;
+  background: rgba(143, 211, 180, 0.08);
   box-shadow: 0 0 0 6px rgba(143, 211, 180, 0.08);
+}
+
+.site-title-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -758,52 +769,6 @@ hr {
     cursor: pointer;
     font-size: 1.5rem;
     line-height: 1;
-  }
-
-  .nav-drawer-profile {
-    display: grid;
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 0.9rem;
-    align-items: center;
-    margin-bottom: 1.3rem;
-    padding: 0.95rem;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: linear-gradient(180deg, rgba(143, 211, 180, 0.1), rgba(255, 255, 255, 0.025));
-  }
-
-  .nav-drawer-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid var(--border-strong);
-    background: var(--bg-soft);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
-  }
-
-  .nav-drawer-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .nav-drawer-avatar .profile-pic-placeholder {
-    font-size: 1.3rem;
-  }
-
-  .nav-drawer-name {
-    margin: 0 0 0.2rem;
-    color: #eff7f2;
-    font-weight: 600;
-  }
-
-  .nav-drawer-subtitle {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.45;
   }
 
   .nav-links-mobile {

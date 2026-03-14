@@ -22,8 +22,8 @@ title: Zack Johnson
 email: zjohnson9225@gmail.com
 description: >-
   A quiet place for personal notes, writing, and updates.
-author_name: Your Name
-profile_image: ""
+author_name: Zack Johnson
+profile_image: "/assets/profile.png"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: Shtacks

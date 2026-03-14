@@ -14,19 +14,32 @@ permalink: /about/
   </div>
   <div>
     <span class="eyebrow">About</span>
-    <h1 class="about-name">{{ site.author_name | default: "Your Name" }}</h1>
-    <p class="about-summary">Use this page as the main introduction to who you are, what you are building, and what readers should expect from this site.</p>
+    <h1 class="about-name">{{ site.author_name }}</h1>
+    <p class="about-summary">Use this page to introduce who you are, what kind of work interests you, and what visitors can expect from the rest of the site.</p>
   </div>
 </section>
 
-Suggested sections
+## Overview
 
-- what you do
-- what you care about
-- what this site is for
+Write a short personal introduction here. This should be the quickest summary of your background, your interests, and what kind of technical work or learning you focus on.
 
-Keep it short and personal. A few paragraphs is enough, especially on mobile.
+## What I Do
 
-Example
+Use this section for your current work, areas of study, technical strengths, or the kinds of problems you like to solve.
 
-I write about projects, ideas, and the work I am learning through. This page is the quick overview, and the posts section is where the longer-form writing lives.
+## Interests
+
+Add a short section about the topics you care about most. This could include data, analytics, software, automation, learning, or anything else you want your site to reflect.
+
+## Current Focus
+
+Describe what you are building, studying, or improving right now. This works well as a bridge between the About page and your Projects section.
+
+## What You Will Find Here
+
+- `Projects` for larger builds, portfolio work, and things in progress
+- `Posts` for reflections, updates, lessons learned, and smaller write-ups
+
+## Contact
+
+You can close with a short note about how people can reach you or where they can follow your work.

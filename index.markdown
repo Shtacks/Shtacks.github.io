@@ -12,9 +12,9 @@ layout: home
   </div>
   <div>
     <span class="eyebrow">About, projects, and writing</span>
-    <h1>Soft light, quiet writing.</h1>
+    <h1>Personal portfolio and interests</h1>
     <p class="home-lead">
-      A calm home for personal background, larger project work, and blog posts that reflect on progress, experiments, and lessons learned.
+      A collection of projects, reflections, and ideas from a data driven, technical guy eager to learn.
     </p>
     <div class="hero-actions">
       <a class="button-link button-link-primary" href="/about/">Read About</a>

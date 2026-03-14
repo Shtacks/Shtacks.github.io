@@ -1,7 +1,9 @@
 <header class="site-header" role="banner">
   <div class="wrapper header-shell">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <span class="site-title-mark"></span>
+      <span class="site-title-mark">
+        <img src="{{ "/assets/logo.png" | relative_url }}" alt="{{ site.title | escape }} logo">
+      </span>
       <span>{{ site.title | escape }}</span>
     </a>
 
@@ -34,20 +36,6 @@
           <span class="sr-only">Close navigation</span>
           <span aria-hidden="true">×</span>
         </label>
-      </div>
-
-      <div class="nav-drawer-profile">
-        <div class="nav-drawer-avatar">
-          {% if site.profile_image %}
-          <img src="{{ site.profile_image | relative_url }}" alt="{{ site.author_name | default: site.title }} profile picture">
-          {% else %}
-          <div class="profile-pic-placeholder">{{ site.author_name | default: site.title | slice: 0 }}</div>
-          {% endif %}
-        </div>
-        <div>
-          <p class="nav-drawer-name">{{ site.author_name | default: site.title }}</p>
-          <p class="nav-drawer-subtitle">{{ site.description | escape }}</p>
-        </div>
       </div>
 
       <div class="nav-links nav-links-mobile">
