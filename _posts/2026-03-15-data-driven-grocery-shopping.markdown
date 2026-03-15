@@ -8,10 +8,6 @@ categories:
 excerpt: "A quick look at how I set up an Obsidian Base to manage my grocery list with simple, data-driven sorting."
 ---
 
-# Summary
-
-A quick look at how I set up an Obsidian Base to manage my grocery list.
-
 ## Context
 
 I had a setup in Notion that worked well, but I have been experimenting with Obsidian and really like its local-first design. Seeing Notion's "you've used all free blocks, upgrade now" message while I was working on my grocery list pushed me to revisit the idea and rebuild the system somewhere else.
