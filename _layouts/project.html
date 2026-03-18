@@ -20,12 +20,20 @@ layout: default
     {% if page.summary or page.excerpt %}
     <p class="post-summary">{{ page.summary | default: page.excerpt | strip_html | normalize_whitespace }}</p>
     {% endif %}
-    {% if page.project_url or page.repo_url %}
+    {% assign project_status = page.status | default: "" | downcase %}
+    {% if project_status == "in progress" %}
+    <div class="project-callout">
+      <strong>Project is a work in progress.</strong> This write up may change or develop as the project progresses.
+    </div>
+    {% endif %}
+    {% assign has_project_url = page.project_url | default: "" | strip %}
+    {% assign has_repo_url = page.repo_url | default: "" | strip %}
+    {% if has_project_url != "" or has_repo_url != "" %}
     <div class="hero-actions project-links">
-      {% if page.project_url %}
+      {% if has_project_url != "" %}
       <a class="button-link button-link-primary" href="{{ page.project_url }}">View project</a>
       {% endif %}
-      {% if page.repo_url %}
+      {% if has_repo_url != "" %}
       <a class="button-link" href="{{ page.repo_url }}">View source</a>
       {% endif %}
     </div>
@@ -35,6 +43,33 @@ layout: default
   <div class="post-content" itemprop="description">
     {{ content }}
   </div>
+
+  {% assign dev_logs = site.posts | where: "project", page.slug %}
+  {% if dev_logs.size > 0 %}
+  <section class="related-section">
+    <div class="section-header related-section-header">
+      <div>
+        <h2>Dev Log</h2>
+        <p>Progress notes, updates, and smaller reflections connected to this project.</p>
+      </div>
+    </div>
+    <ul class="post-list">
+      {% for post in dev_logs %}
+      <li>
+        <div class="post-date-block">{{ post.date | date: "%b %-d, %Y" }}</div>
+        <div>
+          <h3 class="post-card-title">
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {% if post.excerpt %}
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
   <div class="post-nav">
     <a class="button-link" href="{{ "/projects/" | relative_url }}">Back to projects</a>

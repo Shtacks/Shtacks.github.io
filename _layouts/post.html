@@ -18,6 +18,14 @@ layout: default
     {% if page.excerpt %}
     <p class="post-summary">{{ page.excerpt | strip_html | normalize_whitespace }}</p>
     {% endif %}
+    {% if page.project %}
+    {% assign related_project = site.projects | where: "slug", page.project | first %}
+    {% if related_project %}
+    <div class="hero-actions project-links">
+      <a class="button-link" href="{{ related_project.url | relative_url }}">View related project</a>
+    </div>
+    {% endif %}
+    {% endif %}
   </header>
 
   <div class="post-content" itemprop="articleBody">

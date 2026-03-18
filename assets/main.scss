@@ -573,6 +573,19 @@ hr {
   margin-top: 1rem;
 }
 
+.project-callout {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(246, 211, 101, 0.45);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(246, 211, 101, 0.18), rgba(255, 255, 255, 0.02));
+  color: #f5e8b8;
+}
+
+.project-callout strong {
+  color: #fff3c4;
+}
+
 .post-content {
   color: var(--text-soft);
 }
@@ -597,6 +610,16 @@ hr {
   margin-top: 2.2rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
+}
+
+.related-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-section-header {
+  margin-top: 0;
 }
 
 .site-footer {
